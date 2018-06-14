@@ -30,6 +30,11 @@ namespace WpfClient
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
+            string path = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (!File.Exists(path + "\\Users.txt"))
+            {
+                File.Create(path + "\\Users.txt");
+            }
         }
         
         String WeakDecryptMethod(String textIn)
@@ -43,17 +48,20 @@ namespace WpfClient
         }
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            Status.Visibility = Visibility.Hidden;
             RegisterWindow newWindow = new RegisterWindow();
             newWindow.ShowDialog();
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            Status.Visibility = Visibility.Hidden;
+            string path = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             // If file exist and login and password are "correct"
-            if (File.Exists(@"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\WpfClient\Users.txt")
+            if (File.Exists(path + "\\Users.txt")
                 && Login.Text.Length >= 3
                 && Password.Password.Length >= 3)
             {
-                using (StreamReader streamReader = new StreamReader(@"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\WpfClient\Users.txt"))
+                using (StreamReader streamReader = new StreamReader(path + "\\Users.txt"))
                 {
                     // While there is something in streamReader read it
                     while (streamReader.Peek() >= 0)
@@ -62,14 +70,21 @@ namespace WpfClient
                         String decryptedPass = WeakDecryptMethod(streamReader.ReadLine());
                         if (decryptedLogin == Login.Text && decryptedPass == Password.Password)
                         {
-                            Process firstProc = new Process();
-                            firstProc.StartInfo.FileName = @"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\VoiceClient\bin\x64\Debug\VoiceClient.exe";
-                            firstProc.EnableRaisingEvents = true;
+                            //Process firstProc = new Process();
+                            //firstProc.StartInfo.FileName = @"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\VoiceClient\bin\x64\Debug\VoiceClient.exe";
+                            //firstProc.EnableRaisingEvents = true;
 
-                            firstProc.Start();
-
+                            //firstProc.Start();
+                            BotWindow botWindow = new BotWindow();
+                            botWindow.Show();
                             this.Close();
                             break;
+                        }
+                        else
+                        {
+                            Status.Visibility = Visibility.Visible;
+                            Password.Password = "";
+                            Status.Text = "Invalid username or password.";           
                         }
                     }
                 }

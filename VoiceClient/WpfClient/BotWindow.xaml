@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfClient.BotWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClient"
+        mc:Ignorable="d"
+        Title="BotWindow" Height="430.769" Width="517.949" Background="White">
+    <Grid>
+        <TextBlock FontSize="16" x:Name="Detected" HorizontalAlignment="Left" Margin="87,272,0,0" TextWrapping="Wrap" Text="Detected text :" VerticalAlignment="Top" Height="23" Width="355"/>
+        <Button HorizontalAlignment="Left" Margin="175,61,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click" Height="191">
+            <Image Source="voiceimg.png"></Image>
+        </Button>
+        <TextBlock FontSize="16" x:Name="DetectedText" HorizontalAlignment="Left" Margin="87,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
+        <TextBlock FontSize="16" x:Name="Answer" HorizontalAlignment="Left" Margin="87,322,0,0" TextWrapping="Wrap" Text="DialogFlow answer :" VerticalAlignment="Top" Height="23" Width="355"/>
+        <TextBlock FontSize="16" x:Name="AnswerText" HorizontalAlignment="Left" Margin="87,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
+        <TextBlock FontSize="16" x:Name="Status" HorizontalAlignment="Left" Margin="87,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355"/>
+
+    </Grid>
+</Window>

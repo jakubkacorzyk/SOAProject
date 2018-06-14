@@ -43,18 +43,19 @@ namespace WpfClient
         }
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            string path = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             // If file exist and login and password are "correct"
-            if (File.Exists(@"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\WpfClient\Users.txt")
+            if (File.Exists(path + "\\Users.txt")
                 && LoginR.Text.Length >= 3
                 && PasswordR.Password.Length >= 3
                 && PasswordCheckR.Password == PasswordR.Password)
             {
                 StringBuilder stringBuilder = new StringBuilder();
-                using (StreamReader streamReader = new StreamReader(@"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\WpfClient\Users.txt"))
+                using (StreamReader streamReader = new StreamReader(path + "\\Users.txt"))
                 {
                     stringBuilder.Append(streamReader.ReadToEnd());
                 }
-                using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\WpfClient\Users.txt"))
+                using (StreamWriter streamWriter = new StreamWriter(path + "\\Users.txt"))
                 {
                     streamWriter.Write(stringBuilder.ToString());
                     streamWriter.WriteLine(WeakEncryptMethod(LoginR.Text));

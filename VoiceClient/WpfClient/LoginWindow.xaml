@@ -24,6 +24,7 @@
         <Button Content="Ok" Click="btnOK_Click" HorizontalAlignment="Left" Margin="133,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
         <Button Content="Register" Click="btnRegister_Click" HorizontalAlignment="Left" Margin="49,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
         <Button Content="Cancel" Click="btnCancel_Click" HorizontalAlignment="Left" Margin="215,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
+        <TextBox x:Name="Status" Visibility="Hidden" HorizontalAlignment="Left" Height="18" FontSize="14" Margin="49,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177"/>
 
     </Grid>
 </Window>
