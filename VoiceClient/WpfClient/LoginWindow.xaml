@@ -5,26 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
-        Title="SmallTalkBot login window" Height="262.8" Width="348.8"
-        HorizontalAlignment="Center">
+        Title="SmallTalkBot Login" Height="480" Width="640"
+        HorizontalAlignment="Center"
+        Icon="Icon.ico">
+    
 
 
-    <Grid Margin="0,0,3.4,3.8">
+    <Grid Margin="0,0,0,0">
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#607fbf" Offset="0"/>
+                <GradientStop Color="#bfd4ff" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" FontSize="28" Text="Log in" VerticalAlignment="Top"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="24" FontSize="18" Margin="170,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="170,121,0,0" FontSize="18" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="49,88,0,0" FontSize="18" TextWrapping="Wrap" Text="Login :" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="49,122,0,0" FontSize="18" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top"/>
-        <Button Content="Ok" Click="btnOK_Click" HorizontalAlignment="Left" Margin="133,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
-        <Button Content="Register" Click="btnRegister_Click" HorizontalAlignment="Left" Margin="49,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
-        <Button Content="Cancel" Click="btnCancel_Click" HorizontalAlignment="Left" Margin="215,158,0,0" VerticalAlignment="Top" Width="75" Background="#FF838383"/>
-        <TextBox x:Name="Status" Visibility="Hidden" HorizontalAlignment="Left" Height="18" FontSize="14" Margin="49,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177"/>
+
+        <TextBlock  HorizontalAlignment="Center" Margin="0,24,0,0" Foreground="White"  TextWrapping="Wrap" FontSize="48" FontFamily="Lato Light" Text="Sign in" VerticalAlignment="Top">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="2"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+
+
+        <TextBlock Foreground="White" FontFamily="Lato Light" HorizontalAlignment="Center" Margin="-296,132,0,0" FontSize="24" TextWrapping="Wrap" Text="Login :" VerticalAlignment="Top">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Foreground="White" FontFamily="Lato Light" HorizontalAlignment="Center" Margin="-256,172,0,0" FontSize="24" TextWrapping="Wrap" Text="Password :" VerticalAlignment="Top">
+            <TextBlock.Effect>
+                <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <TextBox x:Name="Login" HorizontalAlignment="Center" Height="32" FontSize="24" Margin="64,132,0,0" TextWrapping="Wrap" Text="" FontFamily="Lato Light" VerticalAlignment="Top" Width="192"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Center" Height="32" Margin="64,172,0,0" FontSize="24" FontFamily="Lato Light" VerticalAlignment="Top" Width="192"/>
+
+        <Button Content="OK" FontSize="18" FontFamily="Lato Light" Foreground="White" Click="btnOK_Click" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="128" Background="#476bb3" Height="32"/>
+        <Button Content="Register" FontSize="18" FontFamily="Lato Light" Foreground="White" Click="btnRegister_Click" HorizontalAlignment="Center" Margin="-264,256,0,0" VerticalAlignment="Top" Width="128" Background="#476bb3" Height="32"/>
+        <Button Content="Cancel" FontSize="18" FontFamily="Lato Light" Foreground="White" Click="btnCancel_Click" HorizontalAlignment="Center" Margin="264,256,0,0" VerticalAlignment="Top" Width="128" Background="#476bb3" Height="32"/>
+        <TextBox x:Name="Status" Visibility="Hidden" HorizontalAlignment="Center" Height="18" FontSize="14" Margin="49,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177"/>
 
     </Grid>
 </Window>
