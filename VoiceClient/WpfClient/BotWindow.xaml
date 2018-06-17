@@ -5,16 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
-        Title="BotWindow" Height="430.769" Width="517.949" Background="White">
+        Title="SOAProject" Height="470.369" Width="517.949" Background="White">
     <Grid>
-        <TextBlock FontSize="16" x:Name="Detected" HorizontalAlignment="Left" Margin="87,272,0,0" TextWrapping="Wrap" Text="Detected text :" VerticalAlignment="Top" Height="23" Width="355"/>
-        <Button HorizontalAlignment="Left" Margin="175,61,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click" Height="191">
-            <Image Source="voiceimg.png"></Image>
-        </Button>
-        <TextBlock FontSize="16" x:Name="DetectedText" HorizontalAlignment="Left" Margin="87,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
-        <TextBlock FontSize="16" x:Name="Answer" HorizontalAlignment="Left" Margin="87,322,0,0" TextWrapping="Wrap" Text="DialogFlow answer :" VerticalAlignment="Top" Height="23" Width="355"/>
-        <TextBlock FontSize="16" x:Name="AnswerText" HorizontalAlignment="Left" Margin="87,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
-        <TextBlock FontSize="16" x:Name="Status" HorizontalAlignment="Left" Margin="87,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355"/>
-
+        <TabControl FontSize="14" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,-0.2">
+            <TabItem Header="Small talk bot">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock FontSize="16" x:Name="Detected" HorizontalAlignment="Left" Margin="87,272,0,0" TextWrapping="Wrap" Text="Detected text :" VerticalAlignment="Top" Height="23" Width="355"/>
+                    <Button HorizontalAlignment="Left" Margin="175,61,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click" Height="191">
+                        <Image Source="voiceimg.png"/>
+                    </Button>
+                    <TextBlock FontSize="16" x:Name="DetectedText" HorizontalAlignment="Left" Margin="87,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
+                    <TextBlock FontSize="16" x:Name="Answer" HorizontalAlignment="Left" Margin="87,322,0,0" TextWrapping="Wrap" Text="DialogFlow answer :" VerticalAlignment="Top" Height="23" Width="355"/>
+                    <TextBlock FontSize="16" x:Name="AnswerText" HorizontalAlignment="Left" Margin="87,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
+                    <TextBlock FontSize="16" x:Name="Status" HorizontalAlignment="Left" Margin="87,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
