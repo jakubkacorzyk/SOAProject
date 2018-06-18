@@ -102,6 +102,20 @@
                 </Grid>
 
             </TabItem>
+              <TabItem Header="Weather" Background="#607fbf">
+                <Grid Margin="0,0,0,0">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#607fbf" Offset="0"/>
+                            <GradientStop Color="#bfd4ff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Button x:Name="button_weather" Content="Show" HorizontalAlignment="Left" Margin="224,59,0,0" VerticalAlignment="Top" Width="160" Height="46" Click="button_weather_Click"/>
+                    <TextBlock x:Name="Weather" FontSize="30" HorizontalAlignment="Left" Margin="52,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="258" Width="543"/>
+                    <TextBox x:Name="city" HorizontalAlignment="Left" FontSize="40" Height="44" Margin="224,10,0,0" TextWrapping="Wrap" Text="Krakow" VerticalAlignment="Top" Width="160"/>
+                </Grid>
+
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
