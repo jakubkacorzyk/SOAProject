@@ -116,6 +116,19 @@
                 </Grid>
 
             </TabItem>
+                <TabItem Header="Quotes" Background="#607fbf">
+                <Grid Margin="0,0,0,0">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#607fbf" Offset="0"/>
+                            <GradientStop Color="#bfd4ff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Button x:Name="quote_button" Content="Show Random Quote" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" Width="160" Height="46" Click="quote_button_Click"/>
+                    <TextBlock x:Name="quote" FontSize="25" HorizontalAlignment="Left" Margin="52,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="308" Width="543"/>
+                </Grid>
+
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
