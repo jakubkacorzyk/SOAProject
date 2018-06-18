@@ -5,23 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
-        Title="SOAProject" Height="470.369" Width="517.949" Background="White">
+        Title="SmallTalkBot" Height="480" Width="640"
+        HorizontalAlignment="Center"
+        Icon="Icon.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#607fbf" Offset="0"/>
+            <GradientStop Color="#bfd4ff" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
     <Grid>
-        <TabControl FontSize="14" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,-0.2">
-            <TabItem Header="Small talk bot">
-                <Grid Background="#FFE5E5E5">
-                    <TextBlock FontSize="16" x:Name="Detected" HorizontalAlignment="Left" Margin="87,272,0,0" TextWrapping="Wrap" Text="Detected text :" VerticalAlignment="Top" Height="23" Width="355"/>
-                    <Button HorizontalAlignment="Left" Margin="175,61,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click" Height="191">
+
+        <TabControl FontFamily="Lato Light" FontSize="16" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,0">
+            <TabItem Header="Talk" Background="#607fbf">
+                <Grid Margin="0,0,0,0">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#607fbf" Offset="0"/>
+                            <GradientStop Color="#bfd4ff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+
+                    <!--<TextBlock FontSize="16" x:Name="Detected" HorizontalAlignment="Left" Margin="87,272,0,0" TextWrapping="Wrap" Text="Detected text :" VerticalAlignment="Top" Height="23" Width="355"/>-->
+
+                    <TextBlock Foreground="White" FontFamily="Lato Light" HorizontalAlignment="Center" Margin="0,164,0,0" FontSize="24" TextWrapping="Wrap" Text="Press to talk" VerticalAlignment="Top">
+                        <TextBlock.Effect>
+                            <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <Button HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click" Height="128">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Stroke="Black"
+                         StrokeThickness="0">
+                                        
+                                    </Ellipse>
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
                         <Image Source="voiceimg.png"/>
                     </Button>
-                    <TextBlock FontSize="16" x:Name="DetectedText" HorizontalAlignment="Left" Margin="87,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
-                    <TextBlock FontSize="16" x:Name="Answer" HorizontalAlignment="Left" Margin="87,322,0,0" TextWrapping="Wrap" Text="DialogFlow answer :" VerticalAlignment="Top" Height="23" Width="355"/>
-                    <TextBlock FontSize="16" x:Name="AnswerText" HorizontalAlignment="Left" Margin="87,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="355"/>
-                    <TextBlock FontSize="16" x:Name="Status" HorizontalAlignment="Left" Margin="87,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355"/>
+
+                    <TextBlock FontSize="18" x:Name="DetectedText" Foreground="White" FontFamily="Lato Light"  HorizontalAlignment="Center" Margin="0,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="92" Width="512">
+                        <TextBlock.Effect>
+                            <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <TextBlock FontSize="18" x:Name="AnswerText" Foreground="White" FontFamily="Lato Light"  HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="92" Width="512">
+                        <TextBlock.Effect>
+                            <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    
+                    <TextBlock Foreground="White" x:Name="Status" FontFamily="Lato Light" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top">
+                        <TextBlock.Effect>
+                            <DropShadowEffect
+                    ShadowDepth="1"
+                    Direction="315"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Conversation" Background="#607fbf">
+                <Grid Margin="0,0,0,0">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#607fbf" Offset="0"/>
+                            <GradientStop Color="#bfd4ff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+
             </TabItem>
         </TabControl>
     </Grid>
