@@ -43,12 +43,9 @@ namespace WpfClient
         {
        
             client.RecoFromMicrophoneAsync().Wait();
-            if(DetectedText.Text != null && DetectedText.Text != "")
-            {
-                DetectedText.Text += client.GetDetectedText() + "\n\n";
-                AnswerText.Text += client.GetDialogFlowAnswer(DetectedText.Text) + "\n\n";
-            }
-               
+            DetectedText.Text += client.GetDetectedText() + "\n\n";
+            AnswerText.Text += client.GetDialogFlowAnswer(DetectedText.Text) + "\n\n";
+             
         }
         
         private void button_weather_Click(object sender, RoutedEventArgs e)
