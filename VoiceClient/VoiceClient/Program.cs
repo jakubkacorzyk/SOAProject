@@ -59,12 +59,25 @@ namespace VoiceTest
                 Console.ReadKey();
             }
         }
+        public static string WeatherTest()
+        {
+            HttpWebRequest GETRequest = (HttpWebRequest)WebRequest.Create("https://api.openweathermap.org/data/2.5/weather?q=Krakow&APPID=2a41ea917fe0ea8071a1f776745a4154");
+            GETRequest.Method = "GET";
+            HttpWebResponse GETResponse = (HttpWebResponse)GETRequest.GetResponse();
+            Stream GETResponseStream = GETResponse.GetResponseStream();
+            StreamReader sr = new StreamReader(GETResponseStream);
 
+            Console.WriteLine("Response from Server");
+            dynamic stuff = JObject.Parse(sr.ReadToEnd());
+                return stuff.name;
+        }
             
        
         static void Main(string[] args)
         {
-            RecoFromMicrophoneAsync().Wait();
+            //RecoFromMicrophoneAsync().Wait();
+            Console.WriteLine(WeatherTest());
+            Console.ReadKey();
         }
 
     }
