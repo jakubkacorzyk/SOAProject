@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using ApiAiSDK;
 using ApiAiSDK.Model;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace VoiceTest
 {
@@ -55,6 +59,9 @@ namespace VoiceTest
                 Console.ReadKey();
             }
         }
+
+            
+       
         static void Main(string[] args)
         {
             RecoFromMicrophoneAsync().Wait();

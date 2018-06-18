@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfClient.ServiceReference2;
+using WpfClient.ServiceReference3;
 namespace WpfClient
 {
     /// <summary>
@@ -19,7 +21,8 @@ namespace WpfClient
     /// </summary>
     public partial class BotWindow : Window
     {
-        static Service1Client client = new Service1Client();
+        static ServiceReference2.Service1Client client = new ServiceReference2.Service1Client();
+        static ServiceReference3.Service1Client weatherClient = new ServiceReference3.Service1Client();
         public BotWindow()
         {
             InitializeComponent();
