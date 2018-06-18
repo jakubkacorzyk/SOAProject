@@ -47,5 +47,12 @@ namespace WpfClient
             }
                
         }
+        
+        private void button_weather_Click(object sender, RoutedEventArgs e)
+        {
+            string reader = weatherClient.GetWeatherData(city.Text);
+            dynamic stuff = JObject.Parse(reader);
+            Weather.Text = " City: " + stuff.name + "\n Temperature (Celsius): " + (stuff.main.temp -273.15) + "\n Humidity: " + (stuff.main.humidity) + "\n Wind's speed: " + (stuff.wind.speed) + "\n Cloudiness: " + (stuff.clouds.all);
+        } 
     }
 }
