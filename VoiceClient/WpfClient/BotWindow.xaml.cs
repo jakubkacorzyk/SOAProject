@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using WpfClient.ServiceReference1;
 using WpfClient.ServiceReference2;
 using WpfClient.ServiceReference3;
+using System.Text.RegularExpressions;
 namespace WpfClient
 {
     /// <summary>
@@ -25,6 +26,7 @@ namespace WpfClient
         static ServiceReference2.Service1Client client = new ServiceReference2.Service1Client();
         static ServiceReference3.Service1Client weatherClient = new ServiceReference3.Service1Client();
         static ServiceReference1.Service1Client quotesClient = new ServiceReference1.Service1Client();
+        int MessageCount = 0;
 
         public BotWindow()
         {
@@ -36,7 +38,7 @@ namespace WpfClient
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
             string path = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            AnswerText.Text += "\n";
+            //AnswerText.Text += "\n";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,8 +46,21 @@ namespace WpfClient
        
             client.RecoFromMicrophoneAsync().Wait();
             string detected = client.GetDetectedText();
-            DetectedText.Text += "-" + detected + "\n\n";
-            AnswerText.Text += "-" + client.GetDialogFlowAnswer(detected) + "\n\n";     
+            DetectedText.Text += "– " + detected + "\n\n";
+            AnswerText.Text += "– " + client.GetDialogFlowAnswer(detected) + "\n\n";
+            MessageCount++;
+            if (MessageCount > 4) CleanMessages();
+        }
+
+        private void CleanMessages()
+        {
+            DetectedText.Text = Regex.Replace(DetectedText.Text, @"– .*\n\n–", "");
+            AnswerText.Text = Regex.Replace(AnswerText.Text, @"– .*\n\n–", "");
+
+            DetectedText.Text = "–" + DetectedText.Text;
+            AnswerText.Text = "–" + AnswerText.Text;
+
+            MessageCount--;
         }
         
         private void button_weather_Click(object sender, RoutedEventArgs e)

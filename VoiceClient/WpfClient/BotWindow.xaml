@@ -68,7 +68,7 @@
                         </TextBlock.Effect>
                     </TextBlock>
 
-                    <TextBlock FontSize="18" TextAlignment="Left" x:Name="AnswerText" Foreground="White" FontFamily="Lato Light"  HorizontalAlignment="Center" Margin="288,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="186" Width="256">
+                    <TextBlock FontSize="18" TextAlignment="Left" x:Name="AnswerText" Foreground="White" FontFamily="Lato Light"  HorizontalAlignment="Center" Margin="288,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="186" Width="256">
                         <TextBlock.Effect>
                             <DropShadowEffect
                     ShadowDepth="1"
