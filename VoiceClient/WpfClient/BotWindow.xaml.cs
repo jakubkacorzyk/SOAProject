@@ -54,5 +54,12 @@ namespace WpfClient
             dynamic stuff = JObject.Parse(reader);
             Weather.Text = " City: " + stuff.name + "\n Temperature (Celsius): " + (stuff.main.temp -273.15) + "\n Humidity: " + (stuff.main.humidity) + "\n Wind's speed: " + (stuff.wind.speed) + "\n Cloudiness: " + (stuff.clouds.all);
         } 
+        
+        private void quote_button_Click(object sender, RoutedEventArgs e)
+        {
+            string reader = quotesClient.GetRandomQuote();
+            dynamic stuff = JObject.Parse(reader);
+            quote.Text = "Category: " + stuff.cat + "\n\nAuthor: " + stuff.author + "\n\nQuote: " + stuff.quote;
+        }
     }
 }
