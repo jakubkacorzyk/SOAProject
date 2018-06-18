@@ -23,10 +23,15 @@ namespace WcfBotService
             var config = new AIConfiguration("564e2b6d00424a6ab05ba53cd57b585c", SupportedLanguage.English);
 
             apiAi = new ApiAi(config);
-
-            var responseString = apiAi.TextRequest(message);
-
-            return responseString.Result.Fulfillment.Speech;
+            try
+            {
+                var responseString = apiAi.TextRequest(message);
+                return responseString.Result.Fulfillment.Speech;
+            }
+            catch
+            {
+                return "";
+            }
         }
 
         public string GetDetectedText()

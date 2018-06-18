@@ -30,14 +30,19 @@ namespace WpfClient
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
             string path = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            AnswerText.Text += "\n";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+       
             client.RecoFromMicrophoneAsync().Wait();
-            DetectedText.Text = client.GetDetectedText();
             if(DetectedText.Text != null && DetectedText.Text != "")
-                AnswerText.Text = client.GetDialogFlowAnswer(DetectedText.Text);
+            {
+                DetectedText.Text += client.GetDetectedText() + "\n\n";
+                AnswerText.Text += client.GetDialogFlowAnswer(DetectedText.Text) + "\n\n";
+            }
+               
         }
     }
 }
