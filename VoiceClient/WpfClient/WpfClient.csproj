@@ -191,6 +191,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\ServiceReference2\Service1.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -204,9 +207,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference3\Service1.disco" />
