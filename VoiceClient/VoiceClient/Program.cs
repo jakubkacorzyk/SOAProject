@@ -71,12 +71,28 @@ namespace VoiceTest
             dynamic stuff = JObject.Parse(sr.ReadToEnd());
                 return stuff.name;
         }
-            
-       
+
+        public static string QuotesTest()
+        {
+            HttpWebRequest GETRequest = (HttpWebRequest)WebRequest.Create("https://talaikis.com/api/quotes/random/");
+            GETRequest.Method = "GET";
+            HttpWebResponse GETResponse = (HttpWebResponse)GETRequest.GetResponse();
+            Stream GETResponseStream = GETResponse.GetResponseStream();
+            StreamReader sr = new StreamReader(GETResponseStream);
+
+            Console.WriteLine("Response from Server");
+            dynamic stuff = JObject.Parse(sr.ReadToEnd());
+            return stuff.quote;
+        }
+
+
+
         static void Main(string[] args)
         {
             //RecoFromMicrophoneAsync().Wait();
             Console.WriteLine(WeatherTest());
+    
+            Console.WriteLine(QuotesTest());
             Console.ReadKey();
         }
 

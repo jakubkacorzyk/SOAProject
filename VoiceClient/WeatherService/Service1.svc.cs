@@ -24,8 +24,6 @@ namespace WeatherService
             Stream GETResponseStream = GETResponse.GetResponseStream();
             StreamReader sr = new StreamReader(GETResponseStream);
 
-            Console.WriteLine("Response from Server");
-
             return sr.ReadToEnd();
         }
     }
