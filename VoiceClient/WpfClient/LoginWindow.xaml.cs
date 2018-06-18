@@ -70,23 +70,18 @@ namespace WpfClient
                         String decryptedPass = WeakDecryptMethod(streamReader.ReadLine());
                         if (decryptedLogin == Login.Text && decryptedPass == Password.Password)
                         {
-                            //Process firstProc = new Process();
-                            //firstProc.StartInfo.FileName = @"C:\Users\Jakub Kacorzyk\Desktop\SOAProject\VoiceClient\VoiceClient\bin\x64\Debug\VoiceClient.exe";
-                            //firstProc.EnableRaisingEvents = true;
-
-                            //firstProc.Start();
                             BotWindow botWindow = new BotWindow();
                             botWindow.Show();
                             this.Close();
                             break;
                         }
-                        else
-                        {
-                            Status.Visibility = Visibility.Visible;
-                            Password.Password = "";
-                            Status.Text = "Invalid username or password.";           
-                        }
+
                     }
+
+                    Status.Visibility = Visibility.Visible;
+                    Status.Text = "Invalid username or password.";
+
+
                 }
             }
         }

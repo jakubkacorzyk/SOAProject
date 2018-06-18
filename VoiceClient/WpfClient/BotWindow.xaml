@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
-        Title="SmallTalkBot" Height="480" Width="640"
+        Title="TWQ" Height="480" Width="640"
         HorizontalAlignment="Center"
         Icon="Icon.ico">
     <Window.Background>
