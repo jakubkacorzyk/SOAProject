@@ -45,8 +45,8 @@ namespace WpfClient
             client.RecoFromMicrophoneAsync().Wait();
             if(DetectedText.Text != null && DetectedText.Text != "")
             {
-                DetectedText.Text += client.GetDetectedText() + "\n\n";
-                AnswerText.Text += client.GetDialogFlowAnswer(DetectedText.Text) + "\n\n";
+                DetectedText.Text += "-" + client.GetDetectedText() + "\n\n";
+                AnswerText.Text += "-" + client.GetDialogFlowAnswer(DetectedText.Text) + "\n\n";
             }
                
         }
@@ -55,7 +55,7 @@ namespace WpfClient
         {
             string reader = weatherClient.GetWeatherData(city.Text);
             dynamic stuff = JObject.Parse(reader);
-            Weather.Text = " City: " + stuff.name + "\n Temperature (Celsius): " + (stuff.main.temp -273.15) + "\n Humidity: " + (stuff.main.humidity) + "\n Wind's speed: " + (stuff.wind.speed) + "\n Cloudiness: " + (stuff.clouds.all);
+            Weather.Text = " City: " + stuff.name + "\n Temperature (°C): " + (stuff.main.temp -273.15) + "\n Humidity: " + (stuff.main.humidity) + "\n Wind's speed: " + (stuff.wind.speed) + "\n Cloudiness: " + (stuff.clouds.all);
         } 
         
         private void quote_button_Click(object sender, RoutedEventArgs e)
