@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfClient.ServiceReference1;
 using WpfClient.ServiceReference2;
 using WpfClient.ServiceReference3;
 namespace WpfClient
@@ -23,6 +24,8 @@ namespace WpfClient
     {
         static ServiceReference2.Service1Client client = new ServiceReference2.Service1Client();
         static ServiceReference3.Service1Client weatherClient = new ServiceReference3.Service1Client();
+        static ServiceReference1.Service1Client quotesClient = new ServiceReference1.Service1Client();
+
         public BotWindow()
         {
             InitializeComponent();
