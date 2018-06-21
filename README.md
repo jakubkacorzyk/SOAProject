@@ -9,19 +9,19 @@ Our main application is based on WPF client which connects to 3 WCF services : B
 
 Our application has login and register pages to authorize users.
 
-Login page : 
+# Login page : 
 <img src="https://github.com/kubalo09/SOAProject/blob/master/VoiceClient/Screenshots/LoginPage.png" height="400">
 
-Register page :
+# Register page :
 <img src="https://github.com/kubalo09/SOAProject/blob/master/VoiceClient/Screenshots/RegisterPage.png" height="400">
 
-Bot page :
+# Bot page :
 <img src="https://github.com/kubalo09/SOAProject/blob/master/VoiceClient/Screenshots/Bot.png" height="400">
 
-Weather page :
+# Weather page :
 <img src="https://github.com/kubalo09/SOAProject/blob/master/VoiceClient/Screenshots/Weather.png" height="400">
 
-Quotes page :
+# Quotes page :
 <img src="https://github.com/kubalo09/SOAProject/blob/master/VoiceClient/Screenshots/Quotes.png" height="400">
 
 ## Running 
